@@ -36,10 +36,10 @@ public class HelloController {
             Connection conexion = DriverManager.getConnection("jdbc:mariadb://localhost:3306/nba","root","");
 
             Map parametros = new HashMap();
-            parametros.put("Estado",reportComboBox.getSelectionModel().getSelectedItem());
+            parametros.put("temporada", seasonTextField.getText());
             if(reportComboBox.getSelectionModel().getSelectedItem().equals("Estadísticas jugadores por temporada")) {
-                parametros.put("Temporada", seasonTextField.getText());
-                JasperPrint print = JasperFillManager.fillReport("/media/alumno/3EF5-1E86/DAM/Segundo/Interfaces/UT5/Informe2Def/demo/src/Informes/nba_estadisticas_jugadores_2.jasper", parametros, conexion);
+
+                JasperPrint print = JasperFillManager.fillReport("/media/alumno/3EF5-1E86/DAM/Segundo/Interfaces/UT5/Informe2Def/demo/src/Informes/nba_estadisticas_jugadores_def.jasper", parametros, conexion);
                 JasperExportManager.exportReportToPdfFile(print, "/media/alumno/3EF5-1E86/DAM/Segundo/Interfaces/UT5/Informe2Def/demo/src/Informes/nba_estadisticas_jugadores.pdf");
             }else if (reportComboBox.getSelectionModel().getSelectedItem().equals("Jugadores en equipo")) {
                 JasperPrint print = JasperFillManager.fillReport("/media/alumno/3EF5-1E86/DAM/Segundo/Interfaces/UT5/Informe2Def/demo/src/Informes/nba_jugadores_equipos.jasper", parametros, conexion);
