@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.demo.HelloController"
+      spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+
+    <!-- ComboBox para seleccionar reporte -->
+    <ComboBox fx:id="reportComboBox" prefWidth="200"/>
+
+    <!-- TextField para ingresar la temporada en formato 00/01 -->
+    <TextField fx:id="seasonTextField" promptText="Ingrese temporada (00/01)" prefWidth="200"/>
+
+    <!-- Botón para generar reporte -->
+    <Button fx:id="generateReportButton" text="Generar Reporte" prefWidth="200" onAction="#generateReport"/>
+
+</VBox>
