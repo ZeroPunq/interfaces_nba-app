@@ -15,6 +15,8 @@
 FROM jugadores
 INNER JOIN equipos ON jugadores.Nombre_equipo = equipos.Nombre
 INNER JOIN estadisticas ON jugadores.codigo = estadisticas.jugador
+WHERE estadisticas.temporada = $P{temporada} 
+
 ]]></query>
 	<field name="Jugador" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="Nombre"/>

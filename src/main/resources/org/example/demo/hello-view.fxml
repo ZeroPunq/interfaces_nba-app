@@ -1,20 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
       fx:controller="org.example.demo.HelloController"
-      spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+      spacing="15" alignment="CENTER" style="-fx-padding: 30; -fx-background-color: #F5F5F5;">
 
-    <!-- ComboBox para seleccionar reporte -->
-    <ComboBox fx:id="reportComboBox" prefWidth="200"/>
+    <!-- Título -->
+    <Label text="Generador de Reportes NBA" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
 
-    <!-- TextField para ingresar la temporada en formato 00/01 -->
-    <TextField fx:id="seasonTextField" promptText="Ingrese temporada (00/01)" prefWidth="200"/>
+    <!-- Selección de equipo -->
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Equipo:" style="-fx-font-size: 14px;"/>
+        <ComboBox fx:id="teamComboBox" promptText="Seleccione un equipo" prefWidth="200"/>
+    </HBox>
 
-    <!-- Botón para generar reporte -->
-    <Button fx:id="generateReportButton" text="Generar Reporte" prefWidth="200" onAction="#generateReport"/>
+    <!-- Selección de reporte -->
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Reporte:" style="-fx-font-size: 14px;"/>
+        <ComboBox fx:id="reportComboBox" prefWidth="200"/>
+    </HBox>
+
+    <!-- Temporada -->
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Temporada:" style="-fx-font-size: 14px;"/>
+        <TextField fx:id="seasonTextField" promptText="Ej: 00/01" prefWidth="150"/>
+    </HBox>
+
+    <!-- Botón para generar el reporte -->
+    <Button fx:id="generateReportButton" text="Generar Reporte"
+            style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"
+            onAction="#generateReport"/>
 
 </VBox>
