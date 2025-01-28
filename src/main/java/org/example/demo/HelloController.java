@@ -24,7 +24,8 @@ public class HelloController {
     private Button generateReportButton;
     @FXML
     private TextField seasonTextField;
-
+    @FXML
+    private Label label;
     @FXML
     public void initialize() {
         // Opciones del ComboBox de Reportes
@@ -41,12 +42,13 @@ public class HelloController {
                 "Kings", "Knicks", "Lakers", "Magic", "Mavericks", "Nets",
                 "Nuggets", "Pacers", "Pistons", "Raptors", "Rockets", "Spurs", "Suns"
         );
-        teamComboBox.getSelectionModel().selectFirst();
+
 
         // Listener para ocultar el campo de temporada si se selecciona "Jugadores en equipo"
         reportComboBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if ("Jugadores en equipo".equals(newValue)) {
                 seasonTextField.setVisible(false);
+                label.setVisible(false);
             } else {
                 seasonTextField.setVisible(true);
             }

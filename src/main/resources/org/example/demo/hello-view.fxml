@@ -1,39 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.HBox?>
 
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.demo.HelloController"
-      spacing="15" alignment="CENTER" style="-fx-padding: 30; -fx-background-color: #F5F5F5;">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="15" style="-fx-padding: 30; -fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.HelloController">
 
     <!-- Título -->
-    <Label text="Generador de Reportes NBA" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Generador de Reportes NBA" />
 
     <!-- Selección de equipo -->
-    <HBox spacing="10" alignment="CENTER">
-        <Label text="Equipo:" style="-fx-font-size: 14px;"/>
-        <ComboBox fx:id="teamComboBox" promptText="Seleccione un equipo" prefWidth="200"/>
+    <HBox alignment="CENTER" spacing="10">
+        <Label style="-fx-font-size: 14px;" text="Equipo:" />
+        <ComboBox fx:id="teamComboBox" prefWidth="200" promptText="Seleccione un equipo" />
     </HBox>
 
     <!-- Selección de reporte -->
-    <HBox spacing="10" alignment="CENTER">
-        <Label text="Reporte:" style="-fx-font-size: 14px;"/>
-        <ComboBox fx:id="reportComboBox" prefWidth="200"/>
+    <HBox alignment="CENTER" spacing="10">
+        <Label style="-fx-font-size: 14px;" text="Reporte:" />
+        <ComboBox fx:id="reportComboBox" prefWidth="200" />
     </HBox>
 
     <!-- Temporada -->
-    <HBox spacing="10" alignment="CENTER">
-        <Label text="Temporada:" style="-fx-font-size: 14px;"/>
-        <TextField fx:id="seasonTextField" promptText="Ej: 00/01" prefWidth="150"/>
+    <HBox alignment="CENTER" spacing="10">
+        <Label style="-fx-font-size: 14px;" text="Temporada:" fx:id="label" />
+        <TextField fx:id="seasonTextField" prefWidth="150" promptText="Ej: 00/01" />
     </HBox>
 
     <!-- Botón para generar el reporte -->
-    <Button fx:id="generateReportButton" text="Generar Reporte"
-            style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"
-            onAction="#generateReport"/>
+    <Button fx:id="generateReportButton" onAction="#generateReport" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;" text="Generar Reporte" />
 
 </VBox>
