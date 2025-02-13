@@ -22,11 +22,14 @@
 
     <!-- Temporada -->
     <HBox alignment="CENTER" spacing="10">
-        <Label style="-fx-font-size: 14px;" text="Temporada:" fx:id="label" />
+        <Label fx:id="label" style="-fx-font-size: 14px;" text="Temporada:" />
         <TextField fx:id="seasonTextField" prefWidth="150" promptText="Ej: 00/01" />
     </HBox>
 
     <!-- Botón para generar el reporte -->
     <Button fx:id="generateReportButton" onAction="#generateReport" style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;" text="Generar Reporte" />
+
+    <!-- Hipervínculo a la Guía de Usuario -->
+    <Hyperlink fx:id="userGuideLink" onMouseClicked="#openUserGuide" style="-fx-font-size: 14px;" text="📖 Leer la Guía de Usuario" />
 
 </VBox>
